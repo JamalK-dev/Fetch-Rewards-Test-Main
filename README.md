@@ -2,4 +2,4 @@
 
 This app is compatible in android studio 
 
-Known issues: Async for the line reader produces duplicates of certain item names.
+Both app UI and editor build list results of compiled data. 
