@@ -82,6 +82,7 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
 
                    try{
 
+
                        for(int i = 0; i < JA.length(); i++) {
                            JSONObject JN = array.get(i);
                            String nameValue = JN.getString("name");
@@ -100,6 +101,8 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
 
 
 
+
+
             for(int i =0 ;i < JA.length(); i++){
 
 
@@ -108,28 +111,32 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
                 String nameValue = JO.getString("name");
                 String listValue = JO.getString("listId");
 
-
+                                
                             if ((nameValue == "null") || ("".equals(nameValue)))
                             {
 
-                                System.out.println("ourString " + nameValue);
+                                //System.out.println("ourString " + nameValue);
                             }
                             else {
-                                System.out.println("Real " + nameValue);
+                                //System.out.println("Real " + nameValue);
                                 singleParsed =
                                         "listId:" + JO.get("listId") + "\n"
                                               + "name:" +(JO.get("name")) + "\n";
+
+                                dataParsed = dataParsed + singleParsed +"\n";
+
+                                //System.out.println("this is singleparsed"+singleParsed);
                            }
 
 
 
-                dataParsed = dataParsed + singleParsed +"\n";
+
 
 
 
             }
 
-
+            System.out.println(dataParsed);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
